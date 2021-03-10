@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Col, Row } from '@themesberg/react-bootstrap';
+import { Row } from '@themesberg/react-bootstrap';
 import { RSSTable } from "../../components/Tables";
 
 import axios from 'axios';
@@ -8,6 +8,10 @@ import axios from 'axios';
 export default () => {
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
     axios.get('http://127.0.0.1:9939/get_all')
       .then(function (response) {
         // handle success
@@ -17,12 +21,13 @@ export default () => {
         // handle error
         console.log(error);
       })
-  }, []);
+  }
 
+  
   return (
     <>
       <Row className="justify-content-md-center">
-        <RSSTable data={data} />
+        <RSSTable data={data} onAction={fetchData} />
       </Row>
     </>
   );
