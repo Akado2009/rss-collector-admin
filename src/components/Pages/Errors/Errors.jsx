@@ -21,7 +21,7 @@ export default function Errors(props) {
 
 
     const updateErrors = () => {
-        axios.get("http://127.0.0.1:9939/errors/get")
+        axios.get("/errors/get")
         .then(response => {
             setErrs(response.data);
         })

@@ -18,7 +18,7 @@ export default function AddDialog(props) {
             name,
             url: URL,
         };
-        axios.post("http://127.0.0.1:9939/subscriptions/add", data)
+        axios.post("/subscriptions/add", data)
         .then(response => {
             console.log(response)
             if (response.status == 200) {
