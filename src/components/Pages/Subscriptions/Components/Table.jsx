@@ -44,8 +44,7 @@ export default function Table(props) {
             title: "Alive",
             field: 'alive',
             render: rowData => {
-                let aliveBool = rowData.alive == "true" ? true : false;
-                return aliveBool ? <Working style={{color: aliveColor}} /> : <NotWorking style={{color: notAliveColor}} />
+                return rowData.alive ? <Working style={{color: aliveColor}} /> : <NotWorking style={{color: notAliveColor}} />
             },
         },
         {
