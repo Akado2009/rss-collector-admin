@@ -17,7 +17,7 @@ export default function Releases(props) {
     var theme = useTheme();
     
     const updateReleases = () => {
-        axios.get("http://127.0.0.1:9939/press/get_all")
+        axios.get("http://backend:9939/press/get_all")
         .then(response => {
             setPRs(response.data);
         })
