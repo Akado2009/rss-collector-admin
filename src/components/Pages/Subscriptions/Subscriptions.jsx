@@ -40,7 +40,7 @@ export default function Subscriptions(props) {
     }
 
     const updateSubs = () => {
-        axios.get("http://backend:9939/subscriptions/get_all")
+        axios.get("http://inclinico-dev.lan:9939/subscriptions/get_all")
         .then(response => {
             console.log(response);
             setSubs(response.data);

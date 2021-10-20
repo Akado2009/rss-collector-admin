@@ -17,7 +17,7 @@ export default function Sentences(props) {
     var theme = useTheme();
     
     const updateSentences = () => {
-        axios.get("http://backend:9939/sentences/get_all")
+        axios.get("http://inclinico-dev.lan:9939/sentences/get_all")
         .then(response => {
             setSents(response.data);
         })
