@@ -11,33 +11,32 @@ import useStyles from "./styles";
 
 import Table from './Components/Table';
 
-
-export default function Errors(props) {
+export default function Sentences(props) {
 
     var classes = useStyles();
     var theme = useTheme();
-
-    const updateErrors = () => {
-        axios.get("http://127.0.0.1:9939/errors/get_latest")
+    
+    const updateSentences = () => {
+        axios.get("http://127.0.0.1:9939/sentences/get_all")
         .then(response => {
-            setErrs(response.data);
+            setSents(response.data);
         })
         .catch(error => {
             console.error(error);
         })
     }
 
-    const [errs, setErrs] = useState([]);
+    const [sents, setSents] = useState([]);
     useEffect(() => {
-        updateErrors();
+       updateSentences();
     }, []);
 
     return (
         <>
-            <Typography variant="h1" size="sm">Errors</Typography>
+            <Typography variant="h1" size="sm">Sentences</Typography>
             <br />
             <br />
-            <Table data={errs} />
+            <Table data={sents} />
         </>
     );
 }

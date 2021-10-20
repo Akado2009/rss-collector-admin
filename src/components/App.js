@@ -19,6 +19,9 @@ export default function App() {
           render={() => <Redirect to="/app/subscriptions" />}
         />
         <Route path="/app/subscriptions" component={Layout} />
+        <Route path="/app/press" component={Layout} />
+        <Route path="/app/sentences" component={Layout} />
+        <Route path="/app/dates" component={Layout} />
         <Route path="/app/errors" component={Layout} />
         
       </Switch>

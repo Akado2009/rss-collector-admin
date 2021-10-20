@@ -4,6 +4,9 @@ import {
   Home as HomeIcon,
   Error as ErrorIcon,
   ArrowBack as ArrowBackIcon,
+  TextFields as TextFieldsIcon,
+  DateRange as DateRangeIcon,
+  NewReleases as NewReleasesIcon,
 } from "@material-ui/icons";
 import { useTheme } from "@material-ui/styles";
 import { withRouter } from "react-router-dom";
@@ -31,6 +34,24 @@ const structure = [
   },
   {
     id: 1,
+    label: "Releases",
+    link: "/app/press",
+    icon: <NewReleasesIcon />,
+  },
+  {
+    id: 2,
+    label: "Sentences",
+    link: "/app/sentences",
+    icon: <TextFieldsIcon />,
+  },
+  {
+    id: 3,
+    label: "Dates",
+    link: "/app/dates",
+    icon: <DateRangeIcon />,
+  },
+  {
+    id: 4,
     label: "Errors",
     link: "/app/errors",
     icon: <ErrorIcon />,

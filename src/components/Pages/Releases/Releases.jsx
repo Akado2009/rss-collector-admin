@@ -11,33 +11,32 @@ import useStyles from "./styles";
 
 import Table from './Components/Table';
 
-
-export default function Errors(props) {
+export default function Releases(props) {
 
     var classes = useStyles();
     var theme = useTheme();
-
-    const updateErrors = () => {
-        axios.get("http://127.0.0.1:9939/errors/get_latest")
+    
+    const updateReleases = () => {
+        axios.get("http://127.0.0.1:9939/press/get_all")
         .then(response => {
-            setErrs(response.data);
+            setPRs(response.data);
         })
         .catch(error => {
             console.error(error);
         })
     }
 
-    const [errs, setErrs] = useState([]);
+    const [prs, setPRs] = useState([]);
     useEffect(() => {
-        updateErrors();
+       updateReleases();
     }, []);
 
     return (
         <>
-            <Typography variant="h1" size="sm">Errors</Typography>
+            <Typography variant="h1" size="sm">Press Releases</Typography>
             <br />
             <br />
-            <Table data={errs} />
+            <Table data={prs} />
         </>
     );
 }
