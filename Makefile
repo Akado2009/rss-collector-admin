@@ -1,6 +1,6 @@
 NPM=npm
 DOCKER=docker
-IMAGE_NAME=rss-admin
+IMAGE_NAME=rss-collector-admin
 DOCKERFILE=deploy/docker/Dockerfile
 
 build:
