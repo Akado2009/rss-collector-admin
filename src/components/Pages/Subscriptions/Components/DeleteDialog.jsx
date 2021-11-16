@@ -16,7 +16,7 @@ export default function DeleteDialog(props) {
     const classes = useStyles();
 
     const deleteSubscription = () => {
-        axios.get(`http://inclinico-dev.lan:9939/subscriptions/delete/${props.name}`)
+        axios.get(`http://stage.inclinico.lan/rss/subscriptions/delete/${props.name}`)
         .then(response => {
             console.log(response);
             props.onResult("success", "Successfully has been deleted.");

@@ -17,7 +17,7 @@ export default function Dates(props) {
     var theme = useTheme();
     
     const updateReleases = () => {
-        axios.get("http://inclinico-dev.lan:9939/dates/get_all")
+        axios.get("http://stage.inclinico.lan/rss/dates/get_all")
         .then(response => {
             setDates(response.data);
         })
