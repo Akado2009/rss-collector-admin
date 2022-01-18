@@ -13,6 +13,7 @@ import useStyles from "./styles";
 
 import Table from './Components/Table';
 import AddDialog from './Components/AddDialog';
+import AddBatchDialog from './Components/AddBatchDialog';
 import Notification from './Components/Notification';
 
 export default function Subscriptions(props) {
@@ -20,9 +21,11 @@ export default function Subscriptions(props) {
     var classes = useStyles();
     var theme = useTheme();
     const [open, setOpen] = useState(false);
+    const [batchOpen, setBatchOpen] = useState(false);
     
     const handleClose = () => {
         setOpen(false);
+        setBatchOpen(false);
     }
 
     const [notifOpen, setNotifOpen] = useState(false);
@@ -61,11 +64,15 @@ export default function Subscriptions(props) {
             <Button variant="outlined" color="primary" onClick={() => setOpen(true)}>
                 Add a subscription
             </Button>
+            <Button variant="outlined" color="primary" onClick={() => setBatchOpen(true)}>
+                Add multiple subscriptions
+            </Button>
             <br />
             <br />
             <Table data={subs} onResult={handleResult} />
             
             <AddDialog open={open} handleClose={handleClose} onResult={handleResult} />
+            <AddBatchDialog open={batchOpen} handleClose={handleClose} onResult={handleResult} />
 
             <Notification open={notifOpen} handleClose={handleNotifClose} severity={severity} message={message} />
         </>
