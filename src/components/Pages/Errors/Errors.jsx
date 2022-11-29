@@ -18,7 +18,7 @@ export default function Errors(props) {
     var theme = useTheme();
 
     const updateErrors = () => {
-        axios.get("http://stage.inclinico.lan/rss/errors/get_latest")
+        axios.get("/rss/errors/get_latest")
         .then(response => {
             setErrs(response.data);
         })

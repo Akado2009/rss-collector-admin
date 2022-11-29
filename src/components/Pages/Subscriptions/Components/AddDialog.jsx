@@ -18,7 +18,7 @@ export default function AddDialog(props) {
             name,
             url: URL,
         };
-        axios.post("http://stage.inclinico.lan/rss/subscriptions/add", data)
+        axios.post("/rss/subscriptions/add", data)
         .then(response => {
             console.log(response)
             if (response.status == 200) {

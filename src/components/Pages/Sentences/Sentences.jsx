@@ -15,9 +15,9 @@ export default function Sentences(props) {
 
     var classes = useStyles();
     var theme = useTheme();
-    
+
     const updateSentences = () => {
-        axios.get("http://stage.inclinico.lan/rss/sentences/get_all")
+        axios.get("/rss/sentences/get_all")
         .then(response => {
             setSents(response.data);
         })

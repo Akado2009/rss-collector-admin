@@ -15,9 +15,9 @@ export default function Releases(props) {
 
     var classes = useStyles();
     var theme = useTheme();
-    
+
     const updateReleases = () => {
-        axios.get("http://stage.inclinico.lan/rss/press/get_all")
+        axios.get("/rss/press/get_all")
         .then(response => {
             setPRs(response.data);
         })

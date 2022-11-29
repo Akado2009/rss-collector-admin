@@ -14,7 +14,7 @@ export default function AddBatchDialog(props) {
 
     const submitSubscription = () => {
         let _data  = {"data": data}
-        axios.post("http://stage.inclinico.lan/rss/subscriptions/add_batch", _data)
+        axios.post("/rss/subscriptions/add_batch", _data)
         .then(response => {
             console.log(response)
             if (response.status == 200) {

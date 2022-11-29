@@ -22,7 +22,7 @@ export default function Subscriptions(props) {
     var theme = useTheme();
     const [open, setOpen] = useState(false);
     const [batchOpen, setBatchOpen] = useState(false);
-    
+
     const handleClose = () => {
         setOpen(false);
         setBatchOpen(false);
@@ -43,7 +43,7 @@ export default function Subscriptions(props) {
     }
 
     const updateSubs = () => {
-        axios.get("http://stage.inclinico.lan/rss/subscriptions/get_all")
+        axios.get("/rss/subscriptions/get_all")
         .then(response => {
             console.log(response);
             setSubs(response.data);
@@ -70,7 +70,7 @@ export default function Subscriptions(props) {
             <br />
             <br />
             <Table data={subs} onResult={handleResult} />
-            
+
             <AddDialog open={open} handleClose={handleClose} onResult={handleResult} />
             <AddBatchDialog open={batchOpen} handleClose={handleClose} onResult={handleResult} />
 
