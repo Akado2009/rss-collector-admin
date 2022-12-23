@@ -36,9 +36,9 @@ export default function Table(props) {
         {title: "ID", field: 'id'},
         {title: "Name", field: 'name'},
         {
-            title: "URL", 
+            title: "URL",
             field: 'url',
-            // render: rowData => 
+            // render: rowData =>
         },
         {
             title: "Alive",
@@ -52,6 +52,10 @@ export default function Table(props) {
             field: 'created',
             render: rowData => <i>{moment(rowData.created).format('MMMM Do YYYY, h:mm:ss a')}</i>
         },
+        {
+          title: "Error state",
+          field: "reason",
+        }
     ];
 
     return (
