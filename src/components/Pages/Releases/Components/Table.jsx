@@ -17,7 +17,8 @@ export default function Table(props) {
         {title: "ID", field: 'id'},
         {title: "Subscriptiod ID", field: 'subscription_id'},
         {title: "Subscriptiod Name", field: 'subscription_name'},
-        {title: "Content", field: 'content'},
+        // {title: "Content", field: 'content'},
+        {title: "Link", field: 'link'},
         {
             title: "Date",
             field: 'date',
